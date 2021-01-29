@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { getTotalPagesAsync } from "./store/issuesSlice";
+
+import Issues from "./pages/Issues";
+import IssuesDetails from "./pages/IssuesDetails";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTotalPagesAsync());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/issues/:page/details/:id">
+            <IssuesDetails />
+          </Route>
+          <Route path="/issues/:page">
+            <Issues />
+          </Route>
+          <Route path="/">
+            <Issues />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
