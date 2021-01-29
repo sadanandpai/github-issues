@@ -20,7 +20,7 @@ export default function Issues() {
 
   useEffect(() => {
     dispatch(setDataToDisplayAsync(page));
-  }, [page]);
+  }, [page, dispatch]);
 
   return (
     <>

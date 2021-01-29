@@ -3,17 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ReactTimeAgo from "react-time-ago";
 
-const IssueRow = styled.div`
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 5px 10px;
-  min-height: 40px;
-  display: flex;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-`;
-
 const IssueTitle = styled.div`
   font-size: 1rem;
 `;
