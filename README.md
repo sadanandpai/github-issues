@@ -1,6 +1,6 @@
 # Github Open Issues
 
-Live link: https://sadanandpai.github.io/github-issues/build/
+Live link: https://sadanandpai.github.io/github-issues/build/index.html
 
 ### Installation
 - `git clone https://github.com/sadanandpai/github-issues.git`
